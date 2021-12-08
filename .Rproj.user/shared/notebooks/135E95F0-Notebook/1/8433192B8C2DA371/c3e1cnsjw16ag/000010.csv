@@ -1,0 +1,1186 @@
+"1","
+"
+"1","  Binaries will be installed
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/abind_1.4-5.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 63845 bytes (62 KB)
+"
+"2","downloaded 62 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/magic_1.5-9.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 371863 bytes (363 KB)
+"
+"2","downloaded 363 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/lpSolve_5.6.15.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 748088 bytes (730 KB)
+"
+"2","downloaded 730 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/linprog_0.9-2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 65614 bytes (64 KB)
+"
+"2","downloaded 64 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/RcppProgress_0.4.2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 33950 bytes (33 KB)
+"
+"2","downloaded 33 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/CVST_0.2-2.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 86956 bytes (84 KB)
+"
+"2","downloaded 84 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/warp_0.2.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 98122 bytes (95 KB)
+"
+"2","downloaded 95 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/robustbase_0.93-6.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 3237974 bytes (3.1 MB)
+"
+"2","downloaded 3.1 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/geometry_0.4.5.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1530208 bytes (1.5 MB)
+"
+"2","downloaded 1.5 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/DRR_0.0.4.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 158889 bytes (155 KB)
+"
+"2","downloaded 155 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/slider_0.2.1.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 328431 bytes (320 KB)
+"
+"2","downloaded 320 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/ipred_0.9-11.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 401183 bytes (391 KB)
+"
+"2","downloaded 391 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/ddalpha_1.3.11.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1846446 bytes (1.8 MB)
+"
+"2","downloaded 1.8 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/dimRed_0.2.3.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1419632 bytes (1.4 MB)
+"
+"2","downloaded 1.4 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/igraph_1.2.6.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 9167037 bytes (8.7 MB)
+"
+"2","downloaded 8.7 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/RcppRoll_0.3.0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 625556 bytes (610 KB)
+"
+"2","downloaded 610 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/bin/windows/contrib/3.6/RSpectra_0.16-0.zip'
+"
+"2","Content type 'application/zip'"
+"2"," length 1273734 bytes (1.2 MB)
+"
+"2","downloaded 1.2 MB
+
+"
+"1","package ‘abind’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘magic’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘lpSolve’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘linprog’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘RcppProgress’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘CVST’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘warp’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘robustbase’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘geometry’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘DRR’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘slider’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘ipred’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘ddalpha’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘dimRed’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘igraph’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘RcppRoll’ successfully unpacked and MD5 sums checked
+"
+"1","package ‘RSpectra’ successfully unpacked and MD5 sums checked
+"
+"1","
+"
+"1","The downloaded binary packages are in
+	C:\Users\rogrp\AppData\Local\Temp\Rtmp0yr2ZX\downloaded_packages"
+"1","
+"
+"2","installing the source packages �DEoptimR�, �sfsmisc�, �hardhat�, �furrr�, �modeldata�, �parsnip�, �rsample�, �workflows�, �recipes�
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/DEoptimR_1.0-9.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 36148 bytes (35 KB)
+"
+"2","downloaded 35 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/sfsmisc_1.1-12.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 181200 bytes (176 KB)
+"
+"2","downloaded 176 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/hardhat_0.1.6.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 895320 bytes (874 KB)
+"
+"2","downloaded 874 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/furrr_0.2.3.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 906554 bytes (885 KB)
+"
+"2","downloaded 885 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/modeldata_0.1.1.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 4980309 bytes (4.7 MB)
+"
+"2","downloaded 4.7 MB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/parsnip_0.1.7.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 718465 bytes (701 KB)
+"
+"2","downloaded 701 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/rsample_0.1.1.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 280801 bytes (274 KB)
+"
+"2","downloaded 274 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/workflows_0.2.4.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 94326 bytes (92 KB)
+"
+"2","downloaded 92 KB
+
+"
+"2","trying URL 'https://cran.rstudio.com/src/contrib/recipes_0.1.17.tar.gz'
+"
+"2","Content type 'application/x-gzip'"
+"2"," length 681531 bytes (665 KB)
+"
+"2","downloaded 665 KB
+
+"
+"1","* installing *source* package 'DEoptimR' ...
+"
+"1","** package 'DEoptimR' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'DEoptimR'
+"
+"1","    finding HTML links ... done
+"
+"1","    JDEoptim                                html  
+"
+"1","** building package indices
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (DEoptimR)
+"
+"1","* installing *source* package 'sfsmisc' ...
+"
+"1","** package 'sfsmisc' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** data
+"
+"1","** demo
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'sfsmisc'
+"
+"1","    finding HTML links ... done
+"
+"1","    AsciiToInt                              html  
+"
+"1","    D1D2                                    html  
+"
+"1","    D2ss                                    html  
+"
+"1","    Deprecated                              html  
+"
+"1","    Duplicated                              html  
+"
+"1","    KSd                                     html  
+"
+"1","    QUnif                                   html  
+"
+"1","    TA.plot                                 html  
+"
+"1","    axTexpr                                 html  
+"
+"1","    cairoSwd                                html  
+"
+"1","    capture-n-write                         html  
+"
+"1","    col01scale                              html  
+"
+"1","    compresid2way                           html  
+"
+"1","    cum.Vert.funkt                          html  
+"
+"1","Rd warning: C:/Users/rogrp/AppData/Local/Temp/RtmpKIdh8M/R.INSTALL3f347065792/sfsmisc/man/cum.Vert.funkt.Rd:10: file link 'plot.ecdf' in package 'stats' does not exist and so has been treated as a topic
+"
+"1","Rd warning: C:/Users/rogrp/AppData/Local/Temp/RtmpKIdh8M/R.INSTALL3f347065792/sfsmisc/man/cum.Vert.funkt.Rd:33: file link 'plot.ecdf' in package 'stats' does not exist and so has been treated as a topic
+"
+"1","    diagDA                                  html  
+"
+"1","    diagX                                   html  
+"
+"1","    digitsBase                              html  
+"
+"1","    eaxis                                   html  
+"
+"1","    ecdf.ksCI                               html  
+"
+"1","    ellipsePoints                           html  
+"
+"1","Rd warning: C:/Users/rogrp/AppData/Local/Temp/RtmpKIdh8M/R.INSTALL3f347065792/sfsmisc/man/ellipsePoints.Rd:32: file link 'ellipsoidPoints' in package 'cluster' does not exist and so has been treated as a topic
+"
+"1","    empty.dimnames                          html  
+"
+"1","    errbar                                  html  
+"
+"1","    f.robftest                              html  
+"
+"1","    factorize                               html  
+"
+"1","    funEnv                                  html  
+"
+"1","    hatMat                                  html  
+"
+"1","    helppdf                                 html  
+"
+"1","    histBxp                                 html  
+"
+"1","    integrate.xy                            html  
+"
+"1","    inv.seq                                 html  
+"
+"1","    is.whole                                html  
+"
+"1","    iterate.lin.recursion                   html  
+"
+"1","    last                                    html  
+"
+"1","    linesHyberb.lm                          html  
+"
+"1","    loessDemo                               html  
+"
+"1","    lseq                                    html  
+"
+"1","    mat2tex                                 html  
+"
+"1","    missingCh                               html  
+"
+"1","    mpl                                     html  
+"
+"1","    mult.fig                                html  
+"
+"1","    n.code                                  html  
+"
+"1","    n.plot                                  html  
+"
+"1","    nearcor                                 html  
+"
+"1","    nr.sign.chg                             html  
+"
+"1","    p.arrows                                html  
+"
+"1","    p.datum                                 html  
+"
+"1","    p.dnorm                                 html  
+"
+"1","    p.hboxp                                 html  
+"
+"1","    p.profileTraces                         html  
+"
+"1","    p.res.2fact                             html  
+"
+"1","    p.res.2x                                html  
+"
+"1","    p.scales                                html  
+"
+"1","    p.tachoPlot                             html  
+"
+"1","    p.ts                                    html  
+"
+"1","    paste.vec                               html  
+"
+"1","    pkgDesc                                 html  
+"
+"1","    plotDS                                  html  
+"
+"1","    plotStep                                html  
+"
+"1","    polyn.eval                              html  
+"
+"1","    posdefify                               html  
+"
+"1","    potatoes                                html  
+"
+"1","    pretty10exp                             html  
+"
+"1","    primes                                  html  
+"
+"1","    printTable2                             html  
+"
+"1","    prt.DEBUG                               html  
+"
+"1","    ps.end                                  html  
+"
+"1","    ps.latex                                html  
+"
+"1","    quadrant                                html  
+"
+"1","    read.org.table                          html  
+"
+"1","    relErr                                  html  
+"
+"1","    repChar                                 html  
+"
+"1","    rot13                                   html  
+"
+"1","    rot2                                    html  
+"
+"1","    roundfixS                               html  
+"
+"1","    rrange                                  html  
+"
+"1","    seqXtend                                html  
+"
+"1","    sessionInfoX                            html  
+"
+"1","Rd warning: C:/Users/rogrp/AppData/Local/Temp/RtmpKIdh8M/R.INSTALL3f347065792/sfsmisc/man/sessionInfoX.Rd:57: file link 'tclVersion' in package 'tcltk' does not exist and so has been treated as a topic
+"
+"1","    sfsmisc-defunct                         html  
+"
+"1","    shortRversion                           html  
+"
+"1","    signi                                   html  
+"
+"1","    sourceAttach                            html  
+"
+"1","    str_data                                html  
+"
+"1","    tapplySimpl                             html  
+"
+"1","    tkdensity                               html  
+"
+"1","    toLatex.numeric                         html  
+"
+"1","    u.Datumvonheute                         html  
+"
+"1","    u.assign0                               html  
+"
+"1","    u.boxplot.x                             html  
+"
+"1","    u.date                                  html  
+"
+"1","    u.datumdecode                           html  
+"
+"1","    u.log                                   html  
+"
+"1","    u.sys                                   html  
+"
+"1","    unif                                    html  
+"
+"1","    uniqueL                                 html  
+"
+"1","    vcat                                    html  
+"
+"1","    wrapFormula                             html  
+"
+"1","    xy.grid                                 html  
+"
+"1","    xy.unique.x                             html  
+"
+"1","** building package indices
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (sfsmisc)
+"
+"1","* installing *source* package 'hardhat' ...
+"
+"1","** package 'hardhat' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** data
+"
+"1","*** moving datasets to lazyload DB
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'hardhat'
+"
+"1","    finding HTML links ... done
+"
+"1","    add_intercept_column                    html  
+"
+"1","    contr_one_hot                           html  
+"
+"1","    default_formula_blueprint               html  
+"
+"1","    default_recipe_blueprint                html  
+"
+"1","    default_xy_blueprint                    html  
+"
+"1","    delete_response                         html  
+"
+"1","    extract_ptype                           html  
+"
+"1","    forge                                   html  
+"
+"1","    get_data_classes                        html  
+"
+"1","    get_levels                              html  
+"
+"1","    hardhat-example-data                    html  
+"
+"1","    hardhat-extract                         html  
+"
+"1","    hardhat-package                         html  
+"
+"1","    is_blueprint                            html  
+"
+"1","    model_frame                             html  
+"
+"1","    model_matrix                            html  
+"
+"1","    model_offset                            html  
+"
+"1","    modeling-package                        html  
+"
+"1","    mold                                    html  
+"
+"1","    new-blueprint                           html  
+"
+"1","    new-default-blueprint                   html  
+"
+"1","    new_model                               html  
+"
+"1","    refresh_blueprint                       html  
+"
+"1","    run_mold                                html  
+"
+"1","    scream                                  html  
+"
+"1","    shrink                                  html  
+"
+"1","    spruce                                  html  
+"
+"1","    standardize                             html  
+"
+"1","    update_blueprint                        html  
+"
+"1","    validate_column_names                   html  
+"
+"1","    validate_no_formula_duplication         html  
+"
+"1","    validate_outcomes_are_binary            html  
+"
+"1","    validate_outcomes_are_factors           html  
+"
+"1","    validate_outcomes_are_numeric           html  
+"
+"1","    validate_outcomes_are_univariate        html  
+"
+"1","    validate_prediction_size                html  
+"
+"1","    validate_predictors_are_numeric         html  
+"
+"1","*** copying figures
+"
+"1","** building package indices
+"
+"1","** installing vignettes
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (hardhat)
+"
+"1","* installing *source* package 'furrr' ...
+"
+"1","** package 'furrr' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'furrr'
+"
+"1","    finding HTML links ... done
+"
+"1","    furrr-package                           html  
+"
+"1","    furrr_options                           html  
+"
+"1","    future_imap                             html  
+"
+"1","    future_invoke_map                       html  
+"
+"1","    future_map                              html  
+"
+"1","    future_map2                             html  
+"
+"1","    future_map_if                           html  
+"
+"1","Rd warning: C:/Users/rogrp/AppData/Local/Temp/RtmpwfPYoF/R.INSTALL26207ed9f03/furrr/man/future_map_if.Rd:92: file link 'map_if' in package 'purrr' does not exist and so has been treated as a topic
+"
+"1","Rd warning: C:/Users/rogrp/AppData/Local/Temp/RtmpwfPYoF/R.INSTALL26207ed9f03/furrr/man/future_map_if.Rd:93: file link 'map_if' in package 'purrr' does not exist and so has been treated as a topic
+"
+"1","    future_modify                           html  
+"
+"1","    future_options                          html  
+"
+"1","*** copying figures
+"
+"1","** building package indices
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (furrr)
+"
+"1","* installing *source* package 'modeldata' ...
+"
+"1","** package 'modeldata' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** data
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'modeldata'
+"
+"1","    finding HTML links ... done
+"
+"1","    Chicago                                 html  
+"
+"1","    Sacramento                              html  
+"
+"1","    Smithsonian                             html  
+"
+"1","    ad_data                                 html  
+"
+"1","    ames                                    html  
+"
+"1","    attrition                               html  
+"
+"1","    biomass                                 html  
+"
+"1","    bivariate                               html  
+"
+"1","    car_prices                              html  
+"
+"1","    cells                                   html  
+"
+"1","    check_times                             html  
+"
+"1","    concrete                                html  
+"
+"1","    covers                                  html  
+"
+"1","    credit_data                             html  
+"
+"1","    crickets                                html  
+"
+"1","    drinks                                  html  
+"
+"1","    grants                                  html  
+"
+"1","    hpc_cv                                  html  
+"
+"1","    hpc_data                                html  
+"
+"1","    lending_club                            html  
+"
+"1","    meats                                   html  
+"
+"1","    mlc_churn                               html  
+"
+"1","    oils                                    html  
+"
+"1","    okc                                     html  
+"
+"1","    parabolic                               html  
+"
+"1","    pathology                               html  
+"
+"1","    pd_speech                               html  
+"
+"1","    penguins                                html  
+"
+"1","    scat                                    html  
+"
+"1","    small_fine_foods                        html  
+"
+"1","    solubility_test                         html  
+"
+"1","    stackoverflow                           html  
+"
+"1","    tate_text                               html  
+"
+"1","    two_class_dat                           html  
+"
+"1","    two_class_example                       html  
+"
+"1","    wa_churn                                html  
+"
+"1","*** copying figures
+"
+"1","** building package indices
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (modeldata)
+"
+"1","* installing *source* package 'recipes' ...
+"
+"1","** package 'recipes' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","Warning message:
+"
+"1","package 'dplyr' was built under R version 3.6.3 
+"
+"1","Error in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]) : 
+"
+"1","  namespace 'ipred' 0.9-11 is being loaded, but >= 0.9.12 is required
+"
+"1","Calls: <Anonymous> ... namespaceImportFrom -> asNamespace -> loadNamespace
+"
+"1","Ejecución interrumpida
+"
+"1","ERROR: lazy loading failed for package 'recipes'
+"
+"1","* removing 'C:/Users/rogrp/anaconda3/envs/rstudio/lib/R/library/recipes'
+"
+"1","Warning in "
+"1","install.packages"
+"1"," :
+  "
+"1","installation of package ‘recipes’ had non-zero exit status"
+"1","
+"
+"1","* installing *source* package 'parsnip' ...
+"
+"1","** package 'parsnip' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** data
+"
+"1","*** moving datasets to lazyload DB
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'parsnip'
+"
+"1","    finding HTML links ... done
+"
+"1","    C5.0_train                              html  
+"
+"1","    add_on_exports                          html  
+"
+"1","    add_rowindex                            html  
+"
+"1","    augment                                 html  
+"
+"1","    boost_tree                              html  
+"
+"1","    check_empty_ellipse                     html  
+"
+"1","    contr_one_hot                           html  
+"
+"1","    control_parsnip                         html  
+"
+"1","    convert_helpers                         html  
+"
+"1","    convert_stan_interval                   html  
+"
+"1","    decision_tree                           html  
+"
+"1","    descriptors                             html  
+"
+"1","    details_boost_tree_C5.0                 html  
+"
+"1","    details_boost_tree_spark                html  
+"
+"1","    details_boost_tree_xgboost              html  
+"
+"1","    details_decision_tree_C5.0              html  
+"
+"1","    details_decision_tree_rpart             html  
+"
+"1","    details_decision_tree_spark             html  
+"
+"1","    details_gen_additive_mod_mgcv           html  
+"
+"1","    details_linear_reg_glmnet               html  
+"
+"1","    details_linear_reg_keras                html  
+"
+"1","    details_linear_reg_lm                   html  
+"
+"1","    details_linear_reg_spark                html  
+"
+"1","    details_linear_reg_stan                 html  
+"
+"1","    details_logistic_reg_LiblineaR          html  
+"
+"1","    details_logistic_reg_glm                html  
+"
+"1","    details_logistic_reg_glmnet             html  
+"
+"1","    details_logistic_reg_keras              html  
+"
+"1","    details_logistic_reg_spark              html  
+"
+"1","    details_logistic_reg_stan               html  
+"
+"1","    details_mars_earth                      html  
+"
+"1","    details_mlp_keras                       html  
+"
+"1","    details_mlp_nnet                        html  
+"
+"1","    details_multinom_reg_glmnet             html  
+"
+"1","    details_multinom_reg_keras              html  
+"
+"1","    details_multinom_reg_nnet               html  
+"
+"1","    details_multinom_reg_spark              html  
+"
+"1","    details_nearest_neighbor_kknn           html  
+"
+"1","    details_rand_forest_randomForest        html  
+"
+"1","    details_rand_forest_ranger              html  
+"
+"1","    details_rand_forest_spark               html  
+"
+"1","    details_svm_linear_LiblineaR            html  
+"
+"1","    details_svm_linear_kernlab              html  
+"
+"1","    details_svm_poly_kernlab                html  
+"
+"1","    details_svm_rbf_kernlab                 html  
+"
+"1","    doc-tools                               html  
+"
+"1","    eval_args                               html  
+"
+"1","    extract-parsnip                         html  
+"
+"1","    fit                                     html  
+"
+"1","    gen_additive_mod                        html  
+"
+"1","    get_model_env                           html  
+"
+"1","    glance.model_fit                        html  
+"
+"1","    glmnet-details                          html  
+"
+"1","    glmnet_helpers                          html  
+"
+"1","    glmnet_helpers_prediction               html  
+"
+"1","    has_multi_predict                       html  
+"
+"1","    keras_mlp                               html  
+"
+"1","    linear_reg                              html  
+"
+"1","    logistic_reg                            html  
+"
+"1","    make_call                               html  
+"
+"1","    make_classes                            html  
+"
+"1","    mars                                    html  
+"
+"1","    maybe_matrix                            html  
+"
+"1","    min_cols                                html  
+"
+"1","    mlp                                     html  
+"
+"1","    model_db                                html  
+"
+"1","    model_fit                               html  
+"
+"1","    model_printer                           html  
+"
+"1","    model_spec                              html  
+"
+"1","    multi_predict                           html  
+"
+"1","    multinom_reg                            html  
+"
+"1","    nearest_neighbor                        html  
+"
+"1","    null_model                              html  
+"
+"1","    nullmodel                               html  
+"
+"1","    other_predict                           html  
+"
+"1","    parsnip_addin                           html  
+"
+"1","    parsnip_update                          html  
+"
+"1","    predict.model_fit                       html  
+"
+"1","    prepare_data                            html  
+"
+"1","    proportional_hazards                    html  
+"
+"1","    rand_forest                             html  
+"
+"1","    reexports                               html  
+"
+"1","    repair_call                             html  
+"
+"1","    req_pkgs                                html  
+"
+"1","    rpart_train                             html  
+"
+"1","    set_args                                html  
+"
+"1","    set_engine                              html  
+"
+"1","    set_new_model                           html  
+"
+"1","    show_call                               html  
+"
+"1","    show_engines                            html  
+"
+"1","    stan_conf_int                           html  
+"
+"1","    surv_reg                                html  
+"
+"1","    survival_reg                            html  
+"
+"1","    svm_linear                              html  
+"
+"1","    svm_poly                                html  
+"
+"1","    svm_rbf                                 html  
+"
+"1","    tidy._LiblineaR                         html  
+"
+"1","    tidy._elnet                             html  
+"
+"1","    tidy.model_fit                          html  
+"
+"1","    tidy.nullmodel                          html  
+"
+"1","    translate                               html  
+"
+"1","    type_sum.model_spec                     html  
+"
+"1","    varying                                 html  
+"
+"1","    varying_args                            html  
+"
+"1","    xgb_train                               html  
+"
+"1","*** copying figures
+"
+"1","** building package indices
+"
+"1","** installing vignettes
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (parsnip)
+"
+"1","* installing *source* package 'rsample' ...
+"
+"1","** package 'rsample' successfully unpacked and MD5 sums checked
+"
+"1","** using staged installation
+"
+"1","** R
+"
+"1","** inst
+"
+"1","** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+"
+"1","  converting help for package 'rsample'
+"
+"1","    finding HTML links ... done
+"
+"1","    add_resample_id                         html  
+"
+"1","    apparent                                html  
+"
+"1","    as.data.frame.rsplit                    html  
+"
+"1","    attrition                               html  
+"
+"1","    bootstraps                              html  
+"
+"1","    complement                              html  
+"
+"1","    drinks                                  html  
+"
+"1","    form_pred                               html  
+"
+"1","    gather.rset                             html  
+"
+"1","    get_fingerprint                         html  
+"
+"1","    group_vfold_cv                          html  
+"
+"1","    initial_split                           html  
+"
+"1","    int_pctl                                html  
+"
+"1","    labels.rset                             html  
+"
+"1","    labels.rsplit                           html  
+"
+"1","    loo_cv                                  html  
+"
+"1","    make_splits                             html  
+"
+"1","    make_strata                             html  
+"
+"1","    manual_rset                             html  
+"
+"1","    mc_cv                                   html  
+"
+"1","    nested_cv                               html  
+"
+"1","    new_rset                                html  
+"
+"1","    permutations                            html  
+"
+"1","    populate                                html  
+"
+"1","    pretty.vfold_cv                         html  
+"
+"1","    reexports                               html  
+"
+"1","    reg_intervals                           html  
+"
+"1","    rolling_origin                          html  
+"
+"1","    rsample-dplyr                           html  
+"
+"1","    rsample                                 html  
+"
+"1","    rsample2caret                           html  
+"
+"1","    rset_reconstruct                        html  
+"
+"1","    slide-resampling                        html  
+"
+"1","    tidy.rsplit                             html  
+"
+"1","    two_class_dat                           html  
+"
+"1","    validation_split                        html  
+"
+"1","    vfold_cv                                html  
+"
+"1","*** copying figures
+"
+"1","** building package indices
+"
+"1","** installing vignettes
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+"
+"1","* DONE (rsample)
+"
+"2","
+"

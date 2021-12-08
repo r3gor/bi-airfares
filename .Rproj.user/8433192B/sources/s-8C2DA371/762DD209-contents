@@ -1,0 +1,24 @@
+
+
+```{r}
+#install.packages("ggplot2")
+#install.packages('caret', dependencies = TRUE)
+install.packages("recipes", dependencies = TRUE)
+```
+
+
+```{r}
+library('dplyr')
+library('corrplot')
+library('caTools')
+library('ggplot2')
+library('caret')
+library('rpart')
+library('xgboost')
+library('glmnet')
+```
+
+```{r}
+install.packages("recipes", dependencies = TRUE)
+```
+

@@ -1,0 +1,1 @@
+"0","plot(x = Airfare$DISTANCE, y = Airfare$FARE,type = ""p"", main = ""Relation between Distance and Fair"", xlab = ""Dist between 2 airports"", ylab = ""Avg Price"")"

@@ -1,0 +1,4 @@
+conda install -c r r-caret
+
+install.packages("caret", dependencies = c("Depends", "Suggests"))
+install.packages("ggplot2")

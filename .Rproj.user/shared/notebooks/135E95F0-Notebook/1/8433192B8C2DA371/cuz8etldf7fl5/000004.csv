@@ -1,0 +1,16 @@
+"0","install.packages(""recipes"", dependencies = TRUE)"
+"1","Warning in "
+"1","install.packages"
+"1"," :
+  "
+"1","dependency â€˜fastICAâ€™ is not available"
+"1","
+"
+"2","also installing the dependency ‘ipred’
+
+"
+"1","
+"
+"1","  There are binary versions available but the source versions are later"
+"1",":
+"

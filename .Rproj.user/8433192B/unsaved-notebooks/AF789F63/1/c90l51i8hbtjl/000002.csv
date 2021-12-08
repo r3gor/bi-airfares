@@ -1,0 +1,2 @@
+"0","Airfare.corr = select_if(Airfare, is.numeric) # selecting the one which are numeric"
+"0","coorelation = corrplot(cor(Airfare.corr), type = ""upper"", method = ""number"")"
