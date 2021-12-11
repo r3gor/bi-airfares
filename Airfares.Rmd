@@ -1,24 +1,48 @@
-```{r}
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# Examen Parcial - Caso Airfares
 
-library('dplyr')
-library('corrplot')
-library('caTools')
-library('ggplot2')
-library(caret)
-library('rpart')
-library('xgboost')
-library('glmnet')
+**Equipo 05 - Escuadrón Europa**
+
+* Linares Purizaca, Mauricio Javier 18200086
+* Marcos de la Torre, Renzo Alexis  18200274
+* Mejía Tarazona, Brandon Isaac     18200276
+* Oroncuy Fernandez, Brayan Richard 18200282
+* Ramos Paredes, Roger Anthony      18200096
+* Salcedo Alfaron, Jhon Marco       18200101
+* Vargas Pizango, Sebastian Enrique 18200104
+
+La industria de las aerolíneas es un sector de rápido crecimiento, altamente competitivo y sujeto a cambios drásticos, incluso pequeños cambios en algunos parámetros críticos. Por lo tanto, aplicar el proceso de minería de datos a la toma de decisiones es muy crítico para una supervivencia y éxito más prolongados. Nuestro objetivo principal es implementar un modelo para una de las principales aerolíneas de los EE. UU., Para determinar si necesitan comenzar a operar hacia / desde los aeropuertos recientemente abiertos y cómo deberían fijar el precio de los vuelos en estas nuevas rutas. El análisis se basó en los datos históricos recopilados de una aerolínea en 638 rutas aéreas en los Estados Unidos.
+
+
+```{r}
+library('dplyr') # Funciones sencillas para realizar manipulación de datos en R
+library('corrplot') # Contiene varias funciones de utilidad básicos que incluyen: funciones estadísticas, de lectura / escritura, muestras, etc
+library('caTools') # Visualización de datos en R
+library('ggplot2') # Para trazar una matriz de correlación que muestre la relación entre cada variable.
+library('caret') # Creación de variables ficticias para este caso.
+library('rpart') # Se utiliza para crear modelos de árbol basados en regresión.
+library('xgboost') # Se utiliza para crear modelos de impulso recién entrenados que aprenden de series anteriores de modelos y son eficientes, flexibles y portátiles
+library('glmnet') # Se adapta a modelos lineales / modelos lineales generalizados que penalizan la probabilidad máxima, con regresión LASSO / Ridge
 ```
 
 ```{r}
 sessionInfo()
 ```
+
+## Carga de datos
+
+Cargando los datos del archivo csv. De forma predeterminada, las columnas como Tarifa, S_INCOME, etc. se han asignado como factores que deben convertirse en números. Además, dado que las columnas de cantidad están en formato de moneda del archivo de entrada, R las trata como valores no numéricos y, por lo tanto, es necesario eliminar la moneda y convertirla en formato de número.
+
 ```{r}
 Airfare.data =  read.csv("Data.csv")
 Airfare.data = Airfare.data[,-19]
 
 
-dim(Airfare.data)  #638  18, meaning 638 rows and 18 columns
+dim(Airfare.data)  #638  18, es decir 638 filas y 18 columnas
 ```
 
 ```{r}
@@ -26,82 +50,129 @@ str(Airfare.data)
 ```
 
 ```{r}
-Airfare.data$FARE = as.numeric(substr(as.character(Airfare.data$FARE),2,10)) # To remove currency $
+Airfare.data$FARE = as.numeric(substr(as.character(Airfare.data$FARE),2,10)) # Para eliminar moneda $
 
-## S_INCOME AND E_INCOME are factors, we will need to convert it into number, and remove currency symbol
+## S_INCOME y E_INCOME son factores, necesitaremos convertirlo en número y eliminar el símbolo de moneda
 
 Airfare.data$S_INCOME = as.numeric(gsub("\\$|,","",Airfare.data$S_INCOME))
 Airfare.data$E_INCOME = as.numeric(gsub("\\$|,","",Airfare.data$E_INCOME))
 
-Airfare = Airfare.data[,5:18]                   # Removing the unwanted columns that have text values
+Airfare = Airfare.data[,5:18]  # Eliminar las columnas no deseadas que tienen valores de texto
 
-dim(Airfare)      # Getting the dimension ( no of rows and columns in our data)
+dim(Airfare)      # Obteniendo la dimensión (número de filas y columnas en nuestros datos)
 ```
 
 ```{r}
-summary(Airfare)   # Summary of data
+summary(Airfare)   # Resumen de los datos
 ```
 
+## Análisis Exploratorio
+
+Creación de una matriz de correlación, para encontrar la correlación entre las variables de entrada.
 
 ```{r}
-Airfare.corr = select_if(Airfare, is.numeric) # selecting the one which are numeric
+Airfare.corr = select_if(Airfare, is.numeric) # seleccionando los que son numéricos
 coorelation = corrplot(cor(Airfare.corr), type = "upper", method = "number")
 ```
 
+En la gráfica, se puede ver que la `Distance` y `Coupon` tienen una correlación más positiva con nuestra variable a predecir `FARE`. Creamos plots individuales para observar los comportamientos:
+
 ```{r}
-plot(x = Airfare$DISTANCE, y = Airfare$FARE,type = "p", main = "Relation between Distance and Fair", xlab = "Dist between 2 airports", ylab = "Avg Price")
+plot(x = Airfare$DISTANCE, y = Airfare$FARE,type = "p", main = "Relación entre Distance y Fair", xlab = "Dist entre 2 areopuertos", ylab = "Avg Precio")
 ```
 
 ```{r}
-plot(x = Airfare$COUPON, y = Airfare$FARE,type = "p", main = "Relation between No of Flights Stops and respective Fair", xlab = "No of Flights Stops", ylab = "Avg Price")
+plot(x = Airfare$COUPON, y = Airfare$FARE,type = "p", main = "Relación entre Nro.de Flights Stops y el Fair respectivo", xlab = "Nro. de Flights Stops", ylab = "Avg Precio")
 ```
 
-```{r}
-#install.packages("caret", dependencies = c("Depends", "Suggests"))
+## Preprocesamiento de datos
 
-# converting dummy variables
+El preprocesamiento de datos consta principalmente de tres pasos:
+
+1. Conversión de variables categóricas en variables dummy 
+
+2. Estandarizar o normalizar las columnas de datos, ya que algunas de las columnas como S_POP, E_INCOME tienen valores más altos
+en comparación con otras columnas como DISTANCE, SLOT, etc., por lo tanto, para eliminar el sesgo, tenemos que normalizar los datos. 
+
+3. Al dividir nuestro conjunto de datos en conjuntos de entrenamiento y prueba, la proporción de división es 80:20.
+
+```{r}
+
+# convertimos en variables dummy
 DummyVar = dummyVars("~.",data = Airfare)
 Airfare = data.frame(predict(DummyVar, newdata = Airfare))
 
-## FEAUTURE SCALING
+# normalización
 Airfare[,-18] <- lapply(Airfare[,-18], function(x) if(is.numeric(x)){(x - min(x))/(max(x) - min(x))} else x)
 
-# SPLITTING DATA INTO TRAINING AND TESTING SETS
+# DIVISIÓN DE DATOS EN CONJUNTOS DE ENTRENAMIENTO Y PRUEBAS
 sampleSplit = sample.split(Airfare,SplitRatio = 0.8)
 Airfare.training = subset(Airfare, sampleSplit == TRUE)
 Airfare.test = subset(Airfare, sampleSplit == FALSE)
 ```
 
-Multiple linear regresion
+## Construccion de Modelos
+
+El paso principal involucrado es desarrollar un modelo que pueda predecir efectivamente la tarifa aérea en función de las variables de entrada. El análisis se llevó a cabo utilizando cuatro modelos seleccionados, que fueron
+
+* Modelo de regresión lineal múltiple
+* Modelo de árbol de desición
+* Modelo de aumento de gradiente extremo
+* Modelo de regresión LASSO
+
+### Regresión Lineal Múltiple
+
+La regresión lineal múltiple es la forma más común de análisis de regresión lineal. Como análisis predictivo, la regresión lineal múltiple se utiliza para explicar la relación entre una variable dependiente continua y dos o más variables independientes. Aquí nuestra variable dependiente es la FARE.
+
 ```{r}
 set.seed(100)
 modelLr = lm(FARE ~., data = Airfare.training)
 summary(modelLr)
 ```
 
+A partir del resultado, podemos ver que S_INCOME, COUPON, NEW son las menos significativas, por lo que se eliminan las variables basadas en valores significativos y luego se vuelve a ejecutar el modelo.
+
+
 ```{r}
 set.seed(100)
 modelLR = lm(FARE ~ VACATION.No+SW.No+HI+E_INCOME+S_POP+E_POP+SLOT.Controlled+GATE.Constrained+DISTANCE+PAX, data = Airfare.training)
 LR.predict = predict(modelLR, newdata = Airfare.test[,-18])
 
-## Calculating Mean Squared Error
+## Calculamos el error cuadrático medio
 AccuracyLR = sum(abs(LR.predict - Airfare.test[,18]))/length(Airfare.test[,18])
 
-## Plotting the graph
+## Graficamos
 plot(modelLR)
 ```
 
-desicion tree model
+**ENTENDIENDO LAS GRAFICOS**:
+
+* “Residuals versus fits plot” es el gráfico creado con más frecuencia. Es un diagrama de dispersión de residuos en el eje y y valores ajustados (respuestas estimadas) en el eje x. Esta gráfica se usa generalmente para detectar no linealidad, variaciones de error desiguales y valores atípicos. De la trama, se puede ver que no hay un patrón distintivo significativo
+
+* “The Q-Q plot”, o diagrama de cuantiles-cuantiles, nos muestra si un conjunto de datos proviene de alguna distribución teórica como Normal o exponencial. Parece que los residuos están bien alineados en la línea recta discontinua.
+
+* “Scale-Location” nos muestra si los residuos se distribuyen por igual a lo largo de los rangos de predictores. La gráfica se ve bien ya que satisface la condición de homocedasticidad (es decir, igual varianza). Los puntos dispersos por debajo y por encima de la línea son similares, por lo que la trama parece normal.
+
+* “Residuals vs Leverage” nos ayuda a descubrir casos influyentes o valores atípicos, si los hay. Desde la trama, no hay ningún caso influyente que se pueda observar directamente.
+
+
+### Arboles de Desición
+
+El árbol de decisiones crea modelos de regresión o clasificación en forma de estructura de árbol. Divide un conjunto de datos en subconjuntos cada vez más pequeños mientras que, al mismo tiempo, se desarrolla de forma incremental un árbol de decisiones asociado. El resultado final es un árbol con nodos de decisión y nodos de hoja. Los árboles de decisión pueden manejar datos tanto categóricos como numéricos.
+
 ```{r}
 set.seed(100)
 modelDT = rpart(FARE ~.,data = Airfare.training)
 DT.Predict = predict(modelDT, newdata = Airfare.test[,-18])
 
-## Calculating Mean Squared Error       
+## Calculando el error cuadrático medio       
 AccuracyDT = sum(abs(DT.Predict - Airfare.test[,18]))/length(Airfare.test[,18]) 
 ```
 
-extreme gradient boosting
+### Aumento de Gradiente Extremo
+
+El aumento de gradiente es un tipo de técnicas de conjunto en el aprendizaje automático supervisado, que intenta generar el resultado mediante la construcción de muchos modelos individuales, tratando de calcular la tasa de error (diferencia entre los valores reales y predichos), tratando de minimizar esta tasa de error. Boosting intenta construir muchos modelos individuales, considerando así la tasa de error del modelo anterior al siguiente para minimizarlo, y construyendo un modelo final fuerte combinando cada uno de estos modelos individuales.
+
 ```{r}
 set.seed(100)
 
@@ -114,15 +185,15 @@ dim(as.matrix(Airfare.training$FARE))
 ```{r}
 dtest = xgb.DMatrix(data = as.matrix(Airfare.test[,-18]), label = as.matrix(Airfare.test$FARE))
 
-# Defining the parameters
+# Definimos los parámetros
 parameters = list(booster = "gblinear",
                   objective = "reg:linear",    
-                  eta = 0.1,           #Vary btwn 0.1-0.3
-                  nthread = 5,         #Increase this to improve speed
+                  eta = 0.1,           #Varía entre 0.1-0.3
+                  nthread = 5,         #Aumente esto para mejorar la velocidad
                   max_depth = 15,
-                  lambda= 0.5,         #Vary between 0-3
-                  alpha= 0.5,          #Vary between 0-3
-                  min_child_weight= 2, #Vary btwn 1-10
+                  lambda= 0.5,         #Varía entre 0-3
+                  alpha= 0.5,          #Varía entre 0-3
+                  min_child_weight= 2, #Varía entre 1-10
                   eval_metric = "rmse")
 
 model.Xgb = xgboost(params = parameters, data = dtrain, nrounds = 53)
@@ -133,11 +204,16 @@ model.Predict = predict(model.Xgb, dtest)
 
 AccuracyXgb = sum(abs(model.Predict - Airfare.test[,18]))/length(Airfare.test[,18]) 
 ```
+### LASO
+
+LASSO - Operador de selección y contracción mínima absoluta es un método poderoso que realiza dos tareas principales: regularización y selección de características. El método LASSO intenta reducir la suma de los valores absolutos de los parámetros del modelo por debajo de un valor fijo (límite superior). Para ello, el método aplica un proceso de reducción (regularización) donde penaliza los coeficientes de las variables de regresión reduciendo algunas de ellas a cero. Las variables que todavía tienen un coeficiente distinto de cero después del proceso de contracción se seleccionan para formar parte del modelo. El objetivo de este proceso es minimizar el error de predicción.
+
+Parámetro de ajuste lambda, controla la fuerza de la penalización. Cuanto mayor es el parámetro lambda, más coeficientes se reducen a cero. Por otro lado, si lambda = 0 tenemos una regresión OLS (Ordinary Least Sqaure). El valor de aplha elige entre los métodos LASSO y métodos de cresta (a = 1 LASSO, a = 0 Ridge Regularization). El eje x muestra diferentes valores del parámetro lambda. Cada línea representa una de las variables explicativas y su función en el modelo.
 
 
 ```{r}
 set.seed(100)
-# The input must be a matrix in case of LASSO
+# La entrada debe ser una matriz para aplicar LASSO
 Airfare_X = as.matrix(Airfare[,-18])
 Airfare_Y = Airfare$FARE
 lasso_fit = glmnet(x = Airfare_X, y = Airfare_Y,family ="gaussian",alpha = 1 )
@@ -146,27 +222,42 @@ plot(lasso_fit, xvar = "lambda", label = TRUE)
 ```
 
 ```{r}
-# Cross validation to find value for la
+# Validación cruzada para encontrar el valor de lambda
 cv_lasso = cv.glmnet(x = Airfare_X, y = Airfare_Y, family = "gaussian", alpha = 1, nfolds = 10)
 plot(cv_lasso)
 ```
 
 ```{r}
-# Predicting LASSO value, taking lambda's minimum value
+# Predecir el valor LASSO, tomando el valor mínimo de lambda
 Lasso.Predict = predict(lasso_fit,newx = Airfare_X, s=cv_lasso$lambda.min)
-# Accuracy using the first LASSO method
+# Precisión utilizando el primer método LASSO
 AccuracyLS.min = sum(abs(Lasso.Predict - Airfare_Y))/length(Airfare_Y) #27.50271
-# Predicting LASSO value, taking lambda's standard error of the minimum
+# Predecir el valor LASSO, tomando el error estándar de lambda del mínimo
 Lasso.Predict1se = predict(lasso_fit, newx = Airfare_X, s=cv_lasso$lambda.1se)
-# Accuracy using the second LASSO method
+# Precisión con el segundo método LASSO
 AccuracyLS.1se = sum(abs(Lasso.Predict1se - Airfare_Y))/length(Airfare_Y) #28.71035
 ```
 
-SUMMARY
+## Resultados
+
+El mejor mejor modelo encontrado fue el de regresión de LASSO debido a que obtuvo el menor error (27.50252) con respecto a los otros 3 modelos.
+
+El objetivo principal del análisis fue construir un modelo de aprendizaje automático adecuado, que podría ayudar a SouthWest Airlines a predecir la tarifa aérea para una ruta más nueva.
+
+1.  Los datos se limpiaron y manipularon para nuestro análisis. Se trazaron varios gráficos de correlación para identificar la relación entre diferentes variables.
+
+2. Se utilizaron varios algoritmos de aprendizaje automático para predecir el precio e identificar el mejor modelo.
+
+3. El modelo más preciso, es decir, el modelo con el mínimo RMSE (error cuadrático medio) se identificó a partir de los cuatro modelos, que se muestran a continuación:
+
 ```{r}
-MACHINE_LEARNING_MODELS = c("Multiple Linear Regression","Decision Tree Model","Extreme Gradient Boosting","LASSO Regression")
+MACHINE_LEARNING_MODELS = c("Regresión Lineal Múltiple","Arbol de Desición","Aumento de Gradiente Extremo","Regresión de LASSO")
 ERROR = c(AccuracyLR,AccuracyDT,AccuracyXgb,AccuracyLS.min)
 
 df = data.frame(MACHINE_LEARNING_MODELS,ERROR)
 df
 ```
+
+A partir del análisis, se puede observar que la menor tasa de error se encontró utilizando el modelo de regresión LASSO, por lo que usamos ese modelo como nuestro análisis estándar para predecir las tarifas aéreas en la nueva ruta.
+
+Las tasas de error de otros modelos, como la regresión lineal y los modelos de árbol, fueron lo suficientemente cercanas. El método XgBoost no predijo buenos resultados, puede deberse a que los conjuntos de datos de entrenamiento eran bajos.

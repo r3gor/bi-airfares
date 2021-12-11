@@ -1,6 +1,6 @@
 "0","Airfare.data =  read.csv(""Data.csv"")"
 "0","Airfare.data = Airfare.data[,-19]"
-"0","dim(Airfare.data)  #638  18, meaning 638 rows and 18 columns"
+"0","dim(Airfare.data)  #638  18, es decir 638 filas y 18 columnas"
 "1","[1]"
 "1"," 638"
 "1","  18"

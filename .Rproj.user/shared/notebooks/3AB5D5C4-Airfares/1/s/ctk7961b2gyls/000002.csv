@@ -1,4 +1,0 @@
-"0","MACHINE_LEARNING_MODELS = c(""Multiple Linear Regression"",""Decision Tree Model"",""Extreme Gradient Boosting"",""LASSO Regression"")"
-"0","ERROR = c(AccuracyLR,AccuracyDT,AccuracyXgb,AccuracyLS.min)"
-"0","df = data.frame(MACHINE_LEARNING_MODELS,ERROR)"
-"0","df"
